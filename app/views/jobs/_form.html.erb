@@ -1,0 +1,48 @@
+<%= form_with(model: job, local: true) do |form| %>
+  <% if job.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(job.errors.count, "error") %> prohibited this job from being saved:</h2>
+
+      <ul>
+      <% job.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field form-group">
+    <%= form.text_field :title, id: :job_title, class:"form-control", placeholder:"Job title" %>
+  </div>
+
+  <div class="field form-group">
+    <br/>
+    <%= form.text_area :description, id: :job_description, class:"form-control", placeholder:"Description" %>
+  </div>
+
+  <div class="field form-group">
+    <br/>
+    <%= form.text_field :type, id: :type, class:"form-control", placeholder:"Job type" %>
+  </div>
+
+  <div class="field form-group">
+    <br/>
+    <%= form.text_field :company, id: :job_company, class:"form-control", placeholder:"Company" %>
+  </div>
+
+  <div class="field form-group">
+    <br/>
+    <%= form.text_field :location, id: :job_location, class:"form-control", placeholder:"Location" %>
+  </div>
+
+  <div class="field form-group">
+    <br/>
+    <%= form.number_field :user_id, id: :job_user_id, class:"form-control", value: current_user.id, type: :hidden %>
+  </div>
+
+  <br/>
+  <div class="actions">
+    <%= form.submit class:'btn btn-info' %>
+  </div>
+  <br/>
+<% end %>

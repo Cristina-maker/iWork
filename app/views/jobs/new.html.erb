@@ -1,0 +1,10 @@
+<div class="card">
+  <div class="card-header">
+    <h1>Post a new job</h1>
+  </div>
+  <div class="card-body">
+    <%= render 'form', job: @job %>
+
+    <%= link_to 'Back', jobs_path, class:"btn btn-outline-info" %>
+  </div>
+</div>

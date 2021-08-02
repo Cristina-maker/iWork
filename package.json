@@ -1,0 +1,7 @@
+{
+  "name": "JobPortal",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "^5.0.2"
+  }
+}
